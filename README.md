@@ -1,34 +1,71 @@
-# Project Communicate-Data-Findings
+# Communicate-Data-Findings
+Udacity's Data Analyst Nanodegree - Project
+
+### Introduction
+Bay Wheels is a regional public bicycle sharing system in the San Francisco Bay Area, California operated by Motivate in a partnership with the Metropolitan Transportation Commission and the Bay Area Air Quality Management District. Bay Wheels is the first regional and large-scale bicycle sharing system deployed in California and on the West Coast of the United States. It was established as Bay Area Bike Share in August 2013. As of January 2018, the Bay Wheels system had over 2,600 bicycles in 262 stations across San Francisco, East Bay and San Jose. On June 28, 2017, the system officially re-launched as Ford GoBike in a partnership with Ford Motor Company. After Motivate's acquisition by Lyft, the system was subsequently renamed to Bay Wheels in June 2019. The system is expected to expand to 7,000 bicycles around 540 stations in San Francisco, Oakland, Berkeley, Emeryville, and San Jose.
+
 
 ### The "Why"
 Data visualization is an important skill that is used in many parts of the data analysis process. 
-> *Exploratory* data visualization generally occurs during and after the data wrangling process, and is the main method that you will use to understand the patterns and relationships present in your data. This understanding will help you approach any statistical analyses and will help you build conclusions and findings. This process might also illuminate additional data cleaning tasks to be performed. 
+> *Exploratory* Exploratory Data Analysis refers to the critical process of performing initial investigations on data so as to discover patterns,to spot anomalies,to test hypothesis and to check assumptions with the help of summary statistics and graphical representations. 
 
-> *Explanatory* data visualization techniques are used after generating your findings, and are used to help communicate your results to others. Understanding design considerations will make sure that your message is clear and effective. In addition to being a good producer of visualizations, going through this project will also help you be a good consumer of visualizations that are presented to you by others.
+> *Explanatory* Its a techniques used by generating findings from the Data via EDA and data visualization, and are used to help communicate your results to others. 
 
 ![Ford GoBike Picture](https://images.ctfassets.net/q8mvene1wzq4/4nRp3KxeJFxEhiYUjsKHZm/65c7e155fc0b6494d6bd4205af1f987b/Watson_bike.jpg)
 
 
 ### Project Details
 
-1. Dataset: [Ford GoBike](https://www.fordgobike.com/system-data)
-2. Explore the data: Feel free to explore the jupyter notebook where the dataset is visually, and programatically explored. 
-3. Document the story: organized findings convey a story to present to an audience.
-4. Communicate the findings - a slide deck with my findings is prepared for a curious audience.
+#### Data Gathering
+> Ford GoBike is a publicly available dataset that will enable different folks with different skillsets to play around with.
+Data is downloaded from https://www.fordgobike.com/system-data
 
-### Project Findings
+> There are 12 CSVs provided and the same is downloaded
 
-Ford GoBike System is one of the best program which help users physics and environment friendly
-> Apart from dataset
-  Environmentally friendly, budget friendly, and lifetsyle friendly. <br>
-  Subscribers (i.e. daily commuters) benefit from a health commuting choice <br>
-  Customers (i.e. tourists, students, etc.) have a sustainable, yet flexible option for touring the city.<br>
-  Affordable and convenient transportation for the people of all socioeconomic classes<br>
+> For the current analysis, 2018 data is downloaded 
+
+Brief description about the data Each trip is anonymized and includes:
+- Trip Duration (seconds)
+- Start Time and Date
+- End Time and Date
+- Start Station ID
+- Start Station Name
+- Start Station Latitude
+- Start Station Longitude
+- End Station ID
+- End Station Name
+- End Station Latitude
+- End Station Longitude
+- Bike ID
+- User Type (Subscriber or Customer — “Subscriber” = Member or “Customer” = Casual)
 
 
-> There are two types of clients using the system: Subscribers and Customers. <br>
-  Subscribers are primarily daily commuters, having short trips to and from work, who rent a bike on weekdays at 8-9am and 5-6pm <br>
-  Customers are usually tourists or occassional riders who use the system mainly on weekends to explore the Bay Area.
+### Data Wrangling:
+- All datasets are downloaded programatically and appended
+- Upon a detailed review of the data, I was able to identify the below quality issues
+- Update start_time and end_time to date-time format
+- Convert the start_station_id and end_station_id int int64
+
+### Data Preparation
+Based on the business questions listed above, and identified quality gaps below are some updates needed
+
+- Defining the day of the week
+- Extracting time information form the start and end time columns
+- Defining the distance using Orgin and Destination using Latitude & Longitude information as Kilometer and Miles
+- New Hours Column driven from duration_sec column
+- Defining new column as start_date & end_date Column which was driven from start_time & end_time
+- Creating a time of the day variable
+
+### Conclusion
+
+- Tuesdays and Wednesdays record highest peak of using Ford bike sharing .
+- The usage drops on Saturdays and Sundays
+- October is the most popular month, followed by July/June/August
+- Most usage of bike is during the morning hours of 8-9am, and in the afternoon hours of 5-6pm .
+- Usage of bike system is higher in July for Customers.
+- Usage of bike system is higher in October for Subscribers.
+- The average distance traveled by customers is slightly higher than subscribers. The commuting distance for the subscribers is less  than the average ride a customer takes.
+- Customer has little spike on sat & sun where as Subscribe dip on sat & sun
 
 ### Files
 - readme.md - This Markdown file contains sections that you should fill out as you select your dataset, complete your exploration, and plan your explanatory analysis. 
