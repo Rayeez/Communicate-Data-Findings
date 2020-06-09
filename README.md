@@ -17,8 +17,7 @@ Data visualization is an important skill that is used in many parts of the data 
 ### Project Details
 
 #### Data Gathering
-> Ford GoBike is a publicly available dataset that will enable different folks with different skillsets to play around with.
-Data is downloaded from https://www.fordgobike.com/system-data
+> Ford GoBike is a publicly available dataset that will enable different folks with different skillsets to play around with. Data is downloaded from https://www.fordgobike.com/system-data
 
 > There are 12 CSVs provided and the same is downloaded
 
@@ -56,7 +55,14 @@ Based on the business questions listed above, and identified quality gaps below 
 - Defining new column as start_date & end_date Column which was driven from start_time & end_time
 - Creating a time of the day variable
 
-### Conclusion
+### Summary of Findings
+- Subscribers use the bike sharing system on working days (Mon-Fri) and especially during rush hours.
+- When compare to Subscribers Customers tend to use less service and ride for fun in the afternoon or early evenings over weekends.
+- The number of trips spikes around 8-9am and 05-06pm during a working day 
+- There were more trips on work days (Mon-Fri) compared to weekends.
+- The riding trips tend to be shorter on Monday through Friday compared to weekends.
+
+### Key Findings
 
 - Tuesdays and Wednesdays record highest peak of using Ford bike sharing .
 - The usage drops on Saturdays and Sundays
@@ -66,6 +72,7 @@ Based on the business questions listed above, and identified quality gaps below 
 - Usage of bike system is higher in October for Subscribers.
 - The average distance traveled by customers is slightly higher than subscribers. The commuting distance for the subscribers is less  than the average ride a customer takes.
 - Customer has little spike on sat & sun where as Subscribe dip on sat & sun
+
 
 ### Files
 - readme.md - This Markdown file contains sections that you should fill out as you select your dataset, complete your exploration, and plan your explanatory analysis. 
